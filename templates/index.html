@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Great Number Game</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" media="screen" href={{ url_for('static', filename='style.css') }} />
+</head>
+<body>
+  <header>
+    <p>Your Gold: <span class="gold_display">{{session["gold_counter"]}}</span></p>
+  </header>
+  <main>
+    <div class="location_container">
+      <h3 class="location_to_make_gold">Farm</h3>
+      <p class="earn"> Earns 10-20 gold </p>
+      <form method="post" action="/process_money">
+        <input type="hidden" value="farm" name="location">
+        <input class="make_gold" type="submit" value="Find Gold">
+      </form>
+
+    </div>
+    <div class="location_container">
+      <h3 class="location_to_make_gold">Cave</h3>
+      <p class="earn"> Earns 5-10 gold </p>
+      <form method="post" action="/process_money">
+        <input type="hidden" value="cave" name="location">
+        <input class="make_gold" type="submit" value="Find Gold">
+      </form>
+
+    </div>
+    <div class="location_container">
+      <h3 class="location_to_make_gold">House</h3>
+      <p class="earn"> Earns 2-5 gold </p>
+      <form method="post" action="/process_money">
+        <input type="hidden" value="house" name="location">
+        <input class="make_gold" type="submit" value="Find Gold">
+      </form>
+
+    </div>
+    <div class="location_container">
+      <h3 class="location_to_make_gold">Casino</h3>
+      <p class="earn"> Earns/Loses 0-50 gold </p>
+      <form method="post" action="/process_money">
+        <input type="hidden" value="casino" name="location">
+        <input class="make_gold" type="submit" value="Find Gold">
+      </form>
+
+    </div>
+
+    <foooter>
+      <p class = 'activities'>Activites<p>
+      <div class ="activities_display">
+      {% if win %}
+        <p class = "win">{{session['activitiesLog']}}</p>
+      {% else %}  
+        <p class = "loss">{{session['activitiesLog']}}</p>
+      {% endif %}
+
+      </div>
+    </footer>
+</body>
+</html>

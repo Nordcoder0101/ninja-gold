@@ -1,0 +1,43 @@
+.location_container{
+  display: inline-block;
+  outline: 1px solid black;
+  height: 95px;
+  width: 90px;
+  background-color: aqua;
+}
+
+.location_to_make_gold{
+  text-align: center;
+}
+
+.make_gold{
+  margin-left: 14px
+}
+
+.earn{
+  font-size: 8px;
+  text-align: center;
+  margin: 0 0 5px 0;
+}
+
+.activities_display{
+  height: 110px;
+  width: 460px;
+  outline: 1px solid black
+}
+
+.activities{
+  font-size: 12px;
+}
+
+.win{
+  color: green;
+  width: 450px;
+  display: block;
+}
+
+.loss{
+  color: red;
+  width: 450px;
+  display: block;
+}
